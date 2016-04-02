@@ -13,4 +13,15 @@
     <color name="colorPrimaryNight">#1A1A1B</color>
     <color name="colorPrimaryDarkNight">#1E1F21</color>
     <color name="gray">#AAAAAA</color>
+
+    <!--整个APP的主题色 CYAN-->
+    <color name="primary">#00BCD4</color>
+    <color name="primary_dark">#0097A7</color>
+    <color name="primary_light">#B2EBF2</color>
+    <color name="accent">#FFC107</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#B6B6B6</color>
+    <!--CYAN END-->
 </resources>
