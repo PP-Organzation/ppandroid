@@ -2,6 +2,7 @@ package com.ppandroid.whitefm.base;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -77,6 +78,8 @@ public class ToobarHelper {
         typedArray.recycle();
         /*如果是悬浮状态，则不需要设置间距*/
         params.topMargin = overly ? 0 : toolBarSize;
+        /*content background*/
+        mUserView.setBackgroundColor(Color.parseColor("#ffffff"));
         mContentView.addView(mUserView, params);
 
     }
