@@ -7,7 +7,7 @@ import android.view.MenuItem;
 
 /**
  * Created by yeqinfu on 16-4-2.
- * 本类只对Toobar进行封装
+ * Toobar封装
  */
 public abstract class AC_ToolBar extends AppCompatActivity {
     private ToobarHelper mToolBarHelper ;
@@ -27,6 +27,16 @@ public abstract class AC_ToolBar extends AppCompatActivity {
         /*自定义的一些操作*/
         onCreateCustomToolBar(toolbar) ;
     }
+
+    /**
+     * toolbar setTitle要在setSupportActionBar 之前调用
+     * @param title
+     */
+    public void setTitle(String title){
+        toolbar.setTitle(title);
+        setSupportActionBar(toolbar);
+    }
+
     public void onCreateCustomToolBar(Toolbar toolbar){
         toolbar.setContentInsetsRelative(0,0);
     }

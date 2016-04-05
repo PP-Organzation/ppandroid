@@ -1,11 +1,13 @@
 package com.ppandroid.whitefm;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.antonioleiva.mvpexample.app.R;
 import com.ppandroid.whitefm.base.AC_Base;
+import com.ppandroid.whitefm.toast.ToastUtil;
 
 import butterknife.Bind;
 
@@ -18,9 +20,12 @@ public class AC_Main extends AC_Base{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.ac_main);
-        tv_show.setText("afteroncreate");
-        Toast.makeText(AC_Main.this,"dasfa",Toast.LENGTH_LONG).show();
+        setTitle("toolbartitle");
+        ToastUtil.toast(AC_Main.this,tv_show.getText()+"");
+
+
     }
 
 }
