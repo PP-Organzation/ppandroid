@@ -25,7 +25,6 @@ public class AC_Main extends AC_Base    implements NavigationView.OnNavigationIt
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.ac_main);
         setTitle("toolbartitle");
         ToastUtil.toast(AC_Main.this,tv_show.getText()+"");
