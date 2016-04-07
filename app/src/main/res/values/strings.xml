@@ -11,4 +11,6 @@
     <string name="password_error">Password cannot be empty</string>
 <string name="navigation_drawer_open">yeqinfu open</string>
 <string name="navigation_drawer_close">yeqinfu close</string>
+    <string name="app_title">ppandroid</string>
+    <string name="app_description">纯白网络电台</string>
 </resources>

@@ -27,6 +27,7 @@ public class AC_Main extends AC_Base    implements NavigationView.OnNavigationIt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ac_main);
         setTitle("toolbartitle");
+        tv_show.setText("after");
         ToastUtil.toast(AC_Main.this,tv_show.getText()+"");
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
