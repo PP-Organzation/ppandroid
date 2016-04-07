@@ -50,6 +50,7 @@ public class IntroActivity extends OnboarderActivity {
         Intent intent=new Intent();
         intent.setClass(IntroActivity.this,AC_Main.class);
         startActivity(intent);
+        finish();
     }
 
     @Override
@@ -58,6 +59,7 @@ public class IntroActivity extends OnboarderActivity {
         Intent intent=new Intent();
         intent.setClass(IntroActivity.this,AC_Main.class);
         startActivity(intent);
+        finish();
     }
 }
 
