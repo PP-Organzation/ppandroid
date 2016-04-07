@@ -29,6 +29,8 @@
             </intent-filter>
 
         </activity>
+        <!--FG CONTENT-->
+        <activity android:name="com.ppandroid.whitefm.base.AC_ContentFG"/>
     </application>
 
 </manifest>
