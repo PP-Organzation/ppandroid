@@ -8,8 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 import com.antonioleiva.mvpexample.app.R;
+import com.ppandroid.whitefm.utils.Utils_System;
 
 /**
  * Created by yeqinfu on 16-4-2.
@@ -51,7 +53,6 @@ public class ToobarHelper {
         /*初始化toolbar*/
         initToolBar();
     }
-
     private void initContentView() {
         /*直接创建一个帧布局，作为视图容器的父容器*/
         mContentView = new FrameLayout(mContext);
@@ -74,15 +75,17 @@ public class ToobarHelper {
         /*获取主题中定义的悬浮标志*/
         boolean overly = typedArray.getBoolean(0, false);
         /*获取主题中定义的toolbar的高度*/
-        int toolBarSize = (int) typedArray.getDimension(1,(int) mContext.getResources().getDimension(R.dimen.abc_action_bar_default_height_material));
+        int toolBarSize = (int) typedArray.getDimension(1, (int) mContext.getResources().getDimension(R.dimen.abc_action_bar_default_height_material));
         typedArray.recycle();
         /*如果是悬浮状态，则不需要设置间距*/
-        params.topMargin = overly ? 0 : toolBarSize;
+        params.topMargin = overly ? 0 : toolBarSize+ Utils_System.getStatusBarHeight(mContext);
         /*content background*/
         mUserView.setBackgroundColor(Color.parseColor("#ffffff"));
         mContentView.addView(mUserView, params);
 
     }
+
+
 
     public FrameLayout getContentView() {
         return mContentView;
