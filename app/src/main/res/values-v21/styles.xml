@@ -3,6 +3,7 @@
 
 
     <style name="BaseAPPThemeCYAN" parent="Theme.AppCompat.NoActionBar">
+
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>

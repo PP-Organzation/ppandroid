@@ -19,11 +19,13 @@ public abstract   class FG_Base extends Fragment {
      * @return
      */
     public abstract  int getFragmentLayout();
+    public abstract void afterViews();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(getFragmentLayout(), container, false);
         ButterKnife.bind(this, view);
+        afterViews();
         return view;
     }
     /**
