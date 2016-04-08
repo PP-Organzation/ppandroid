@@ -12,9 +12,11 @@ import android.widget.Toast;
 
 import com.antonioleiva.mvpexample.app.R;
 import com.ppandroid.whitefm.base.AC_Base;
+import com.ppandroid.whitefm.base.AC_ContentFG;
 import com.ppandroid.whitefm.toast.ToastUtil;
 
 import butterknife.Bind;
+import butterknife.OnClick;
 
 /**
  * Created by yeqinfu on 16-4-2.
@@ -22,10 +24,16 @@ import butterknife.Bind;
 public class AC_Main extends AC_Base    implements NavigationView.OnNavigationItemSelectedListener{
     @Bind(R.id.tv_show)
     TextView tv_show;
+
+    @Override
+    public int getActivityLayout() {
+        return R.layout.ac_main;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ac_main);
+       // setContentView(R.layout.ac_main);
         setTitle("toolbartitle");
         tv_show.setText("after");
         ToastUtil.toast(AC_Main.this,tv_show.getText()+"");
@@ -38,6 +46,8 @@ public class AC_Main extends AC_Base    implements NavigationView.OnNavigationIt
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        startActivity(AC_ContentFG.createIntent(AC_Main.this, "ceshi", "", null));
     }
 
     @Override
@@ -53,5 +63,17 @@ public class AC_Main extends AC_Base    implements NavigationView.OnNavigationIt
         } else {
             super.onBackPressed();
         }
+    }
+
+    @OnClick(R.id.bt_to_fg)
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.bt_to_fg:
+                startActivity(AC_ContentFG.createIntent(AC_Main.this,"ceshi","",null));
+                break;
+            default:
+                break;
+        }
+
     }
 }

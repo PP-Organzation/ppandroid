@@ -8,4 +8,8 @@ import com.ppandroid.whitefm.base.FG_Base;
  */
 public class FG_MainMusic extends FG_Base {
 
+    @Override
+    public int getFragmentLayout() {
+        return 0;
+    }
 }

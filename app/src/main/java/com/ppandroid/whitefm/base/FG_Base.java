@@ -1,17 +1,31 @@
 package com.ppandroid.whitefm.base;
 
 import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.os.Bundle;
+
+import butterknife.ButterKnife;
+
 
 /**
  * Created by yeqinfu on 2016/4/7.
  */
-public  class FG_Base extends Fragment {
-    /*@Override
+public abstract   class FG_Base extends Fragment {
+
+    /**
+     * 子类必须实现的layout
+     * @return
+     */
+    public abstract  int getFragmentLayout();
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fancy_fragment, container, false);
+        View view = inflater.inflate(getFragmentLayout(), container, false);
         ButterKnife.bind(this, view);
         return view;
-    }*/
+    }
     /**
      * 销毁当前页面
      */
@@ -19,5 +33,10 @@ public  class FG_Base extends Fragment {
         if (null != getActivity()){
             getActivity().finish();
         }
+    }
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);//解绑
     }
 }

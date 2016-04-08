@@ -26,10 +26,16 @@ public class AC_ContentFG extends AC_Base {
         }
         return it;
     }
+
+    @Override
+    public int getActivityLayout() {
+        return R.layout.ac_content_fg;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ac_content_fg);
+      //  setContentView(R.layout.ac_content_fg);
         replaceFragment(getIntent());
     }
 
